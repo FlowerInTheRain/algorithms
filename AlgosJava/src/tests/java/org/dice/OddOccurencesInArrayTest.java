@@ -13,6 +13,7 @@ public class OddOccurencesInArrayTest {
     public static Stream<Arguments> oddOccurrences() {
         return Stream.of(
                 Arguments.of(new int[]{9,3,9,3,9,7,9}, 7),
+                Arguments.of(new int[]{1,2,2,1,1,1}, 0),
                 Arguments.of(new int[]{9,3,9,3,9,7,9,9,3,9,3,9,9,9,3,9,3,9,9}, 7)
                 );
     }
