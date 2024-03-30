@@ -8,7 +8,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-public class OddOccurencesInArrayTest {
+public class OddOccurrencesInArrayTest {
 
     public static Stream<Arguments> oddOccurrences() {
         return Stream.of(
