@@ -25,3 +25,5 @@ replay_pid*
 AlgosJava/.idea
 AlgosJava/*.iml
 AlgosJava/target
+Rust/target
+Rust/.idea
