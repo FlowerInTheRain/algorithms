@@ -1,12 +1,14 @@
 package org.dice.esgi.training;
 
 public class StringCompressionCanalPlus {
+    public static int test1 = 7;
 
     public static String compressOccurrence(String toCompress){
+        int test = 2;
         if(toCompress == null || toCompress.isEmpty() || toCompress.contentEquals(" ")){
             throw new RuntimeException("Invalid source data");
         }
-        toCompress = toCompress.replace(" ","");
+        toCompress = toCompress.replace(" ","" + test1);
         StringBuilder compressedString = new StringBuilder();
         int occurrences = 0;
         char character = toCompress.charAt(0);

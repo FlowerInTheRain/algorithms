@@ -10,16 +10,23 @@ import java.util.stream.Stream;
 
 public class OddOccurrencesInArrayTest {
 
-    public static Stream<Arguments> oddOccurrences() {
+
+
+    public static Stream<Arguments> testFindCorrectResultOddOccurrences() {
         return Stream.of(
                 Arguments.of(new int[]{9,3,9,3,9,7,9}, 7),
                 Arguments.of(new int[]{1,2,2,1,1,1}, 0),
                 Arguments.of(new int[]{9,3,9,3,9,7,9,9,3,9,3,9,9,9,3,9,3,9,9}, 7)
                 );
     }
+
+    /**
+     * @param array an array of ints with one odd number or not
+     * @param result the expected result from the method, 0 if no odd occurrence, or the odd occurence
+     */
     @ParameterizedTest
     @MethodSource
-    public void oddOccurrences(int[] array, int result){
+    public void testFindCorrectResultOddOccurrences(int[] array, int result){
         Assertions.assertEquals(result, OddOccurrencesInArray.solution(array));
     }
 }
