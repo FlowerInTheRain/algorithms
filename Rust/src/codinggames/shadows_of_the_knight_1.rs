@@ -36,7 +36,6 @@ mod shadows_of_the_night {
         let mut max_y=h;
         let mut min_x=0;
         let mut max_x=w;
-        let _ffloat = 0.1;
         let mut index = 0;
         loop {
             let mut input_line = String::new();
