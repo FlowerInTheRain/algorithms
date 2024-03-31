@@ -1,6 +1,6 @@
-package org.dice;
+package al.go;
 
-import org.dice.codility.OddOccurrencesInArray;
+import al.go.codility.OddOccurrencesInArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;

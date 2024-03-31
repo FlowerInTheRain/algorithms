@@ -24,9 +24,10 @@ hs_err_pid*
 replay_pid*
 AlgosJava/.idea
 AlgosJava/*.iml
-AlgosJava/target
+**/target
 Rust/target
 Rust/.idea
 .id
 JS/algoj/node_modules
 .idea
+**/*.iml

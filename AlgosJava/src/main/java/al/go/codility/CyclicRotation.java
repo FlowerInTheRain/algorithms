@@ -1,4 +1,4 @@
-package org.dice.codility;
+package al.go.codility;
 
 public class CyclicRotation {
     public static int[] solution(int[] A, int K){

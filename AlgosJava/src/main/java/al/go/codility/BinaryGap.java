@@ -1,4 +1,4 @@
-package org.dice.codility;
+package al.go.codility;
 
 public class BinaryGap {
     public static int solution(int number){
