@@ -27,4 +27,6 @@ AlgosJava/*.iml
 AlgosJava/target
 Rust/target
 Rust/.idea
+.id
+JS/algoj/node_modules
 .idea

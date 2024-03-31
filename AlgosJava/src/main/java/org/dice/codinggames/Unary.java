@@ -42,7 +42,7 @@ public class Unary {
                     } else {j = l - 1;break;}
                 }
             }
-            if(j < charArray.length - 1)builder.append(' ');
+            if(j < charArray.length - 1) builder.append(' ');
         }
         return builder.toString();
     }
