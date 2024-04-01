@@ -3,19 +3,7 @@ package al.go.codinggames;
 public class Unary {
     public static String unaryRepresentation(String MESSAGE) {
         StringBuilder builder = new StringBuilder();
-        StringBuilder binaryStringBuilder = new StringBuilder();
-        char[] charArray = MESSAGE.toCharArray();
-        for (char c : charArray) {
-            String binaryString = Integer.toBinaryString(c);
-            if (binaryString.length() < 7) {
-                int step = (7 - (binaryString.length() % 7));
-                for (int j = 0; j < step; j++) {
-                    binaryStringBuilder.insert(binaryStringBuilder.toString().length(), "0");
-                }
-            }
-            binaryStringBuilder.append(binaryString);
-        }
-        charArray = binaryStringBuilder.toString().toCharArray();
+        char[] charArray = getCharsAsArray(MESSAGE);
         for(int j = 0; j < charArray.length; j++){
             builder.append('0');
             if(charArray[j] == '1'){
@@ -45,6 +33,23 @@ public class Unary {
             if(j < charArray.length - 1) builder.append(' ');
         }
         return builder.toString();
+    }
+    
+    private static char[] getCharsAsArray(String MESSAGE) {
+        StringBuilder binaryStringBuilder = new StringBuilder();
+        char[] charArray = MESSAGE.toCharArray();
+        for (char c : charArray) {
+            String binaryString = Integer.toBinaryString(c);
+            if (binaryString.length() < 7) {
+                int step = (7 - (binaryString.length() % 7));
+                for (int j = 0; j < step; j++) {
+                    binaryStringBuilder.insert(binaryStringBuilder.toString().length(), "0");
+                }
+            }
+            binaryStringBuilder.append(binaryString);
+        }
+        charArray = binaryStringBuilder.toString().toCharArray();
+        return charArray;
     }
 }
 

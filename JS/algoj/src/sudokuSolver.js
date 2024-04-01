@@ -58,13 +58,14 @@ for(let ind = 0; ind < inputs.length;ind++){
         var input = inputs[i].split(" ");
         grid.push(input);
     }
-
+    
     let ans = true;
     let res_column = 0;
     let res_row = 0;
      let countRow = 0;
     let countCols = 0;
-
+    let str = "dsqdq".split("");
+    str[0].to
     for(let i= 0; i < grid.length; i ++){
         for (let j = 0; j < 9; j++) {
             const r = Number(grid[i][j]);

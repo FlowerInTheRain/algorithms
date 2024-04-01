@@ -14,7 +14,7 @@ object BaseConverter {
 		`val`
 	}
 
-	def charToDecimal(c: Char): Int = {
+	private def charToDecimal(c: Char): Int = {
 		if (c >= '0' && c <= '9') {
 			c - '0'
 		} else if (c >= 'A' && c <= 'Z') {

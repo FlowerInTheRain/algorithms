@@ -2,7 +2,7 @@ package al.go.codility;
 
 public class BinaryGap {
     public static int solution(int number){
-        String numToBinaryString = Integer.toBinaryString(number);
+        final String numToBinaryString = Integer.toBinaryString(number);
         int binaryGap = 0;
         int occurrences = 0;
         int indexStart = numToBinaryString.indexOf("1");

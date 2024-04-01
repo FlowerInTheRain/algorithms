@@ -311,7 +311,7 @@ mod tests {
                                 "17 S"];
         let mut answer:HashMap<i32,String> = HashMap::new();
         answer.insert(10,"30 31 20 11 15".to_string());
-        assert_eq!(answer, tournament(participants));
+        assert_eq!(answer, tournament::solver::solve(participants));
         assert_eq!(2+2, 4);
 
     }
@@ -328,7 +328,7 @@ mod tests {
             "2 L"];
         let mut answer:HashMap<i32,String> = HashMap::new();
         answer.insert(2,"6 5 1".to_string());
-        assert_eq!(answer, tournament(participants));
+        assert_eq!(answer, tournament::solver::solve(participants));
         assert_eq!(2+2, 4);
 
     }

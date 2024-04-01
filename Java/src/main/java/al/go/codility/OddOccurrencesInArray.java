@@ -7,7 +7,6 @@ public class OddOccurrencesInArray {
         for (int i : array) {
             res ^= i;
         }
-
         return res;
     }
 }

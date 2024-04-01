@@ -16,23 +16,22 @@ object BuzzleObj {
 				if (num.toInt % inputs(j).toInt == 0 || num.endsWith(inputs(j))) {
 
 					answers :+= "Buzzle"
-					println("Buzzle")
+					//println("Buzzle")
 					isPrinted = true
 				} else if (recursiveSumOfDigits(num.toInt, inputs(j).toInt)) {
 					answers :+= "Buzzle"
-					println("Buzzle")
+					//println("Buzzle")
 					isPrinted = true
 				}
 			}
 			if (!isPrinted) {
 				answers :+= num
-				println(num)
+				//println(num)
 				isPrinted = false
 			}
 		}
 		answers
 	}
-
 	@tailrec
 	private def recursiveSumOfDigits(input: Int, validator: Int): Boolean = {
 		val res = input.toString.split("").map(x => x.toInt).sum
@@ -46,5 +45,4 @@ object BuzzleObj {
 			}
 		}
 	}
-
 }
