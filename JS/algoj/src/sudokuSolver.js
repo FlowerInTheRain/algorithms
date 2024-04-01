@@ -71,14 +71,14 @@ for(let ind = 0; ind < inputs.length;ind++){
             const c = Number(grid[j][i]);
             res_row += r;
             res_column += c;
-            if(j == 8 ){
-                if(res_row == 45){
+            if(j === 8 ){
+                if(res_row === 45){
                     countRow++;
                 } else {
                     ans = false;
                 }
                 res_row = 0;
-                if(res_column == 45){
+                if(res_column === 45){
                     countCols++;
                 } else {
                     ans = false;
@@ -88,11 +88,8 @@ for(let ind = 0; ind < inputs.length;ind++){
         }
     }
 
-    console.log(ans)
      let areas = new Array(9).fill([]);
-
      grid.forEach((numbers, idx)=> {
-
          let segment = Math.floor(idx / 3);
          areas[segment]      = [...areas[segment],     ...grid[idx].slice(0, 3)];
          areas[segment + 3]  = [...areas[segment + 3], ...grid[idx].slice(3, 6)];
@@ -100,17 +97,12 @@ for(let ind = 0; ind < inputs.length;ind++){
 
      })
       areas.forEach(area => {
-         ans = (area.filter((item, index) => area.indexOf(item) !== index).length) !== 0;
+         ans = ((area.filter((item, index) => area.indexOf(item) !== index).length) !== 0);
          ans = area.reduce((accumulator, currentValue) => {
              return accumulator + Number(currentValue)
          },0) === 45
      });
         return ans;
-     //console.log(ans)
-
-// Write an answer using console.log()
-// To debug: console.error('Debug messages...');
-
 }
 const compute = {
     solve: solve

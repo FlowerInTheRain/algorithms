@@ -11,6 +11,7 @@
     <modules>
         <module>AlgosJava</module>
         <module>algos</module>
+        <module>Rust</module>
     </modules>
 
 </project>

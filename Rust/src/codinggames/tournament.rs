@@ -3,7 +3,7 @@ macro_rules! parse_input {
     ($x:expr, $t:ident) => ($x.trim().parse::<$t>().unwrap())
 }
 
-mod tournament {
+pub mod solver {
     use std::collections::HashMap;
 
     #[derive(Debug,Clone)]
@@ -13,7 +13,7 @@ mod tournament {
         defeated:String
     }
 
-    fn solve(participants: Vec<&str>) -> HashMap<i32,String> {
+    pub fn solve(participants: Vec<&str>) -> HashMap<i32,String> {
         //let mut input_line = String::new();
         //io::stdin().read_line(&mut input_line).unwrap();
         let mut winners : Vec<Player> = Vec::new();
@@ -35,7 +35,6 @@ mod tournament {
                     if i % 2 == 1 {
                         num_player_2 = parse_input!(inputs[0], i32);
                         sign_player_2 = inputs[1].trim().to_string();
-
                         if sign_player_2 == "S"{
                             match sign_player_1.as_str() {
                                 "C"|"R" => {
@@ -134,8 +133,6 @@ mod tournament {
                         sign_player_1 = player1.sign.clone();
                         num_player_2 = player2.num.clone();
                         sign_player_2 = player2.sign.clone();
-
-
                         if sign_player_2 == "S"{
                             match sign_player_1.as_str() {
                                 "C"|"R" => {
@@ -175,9 +172,7 @@ mod tournament {
                                     set_winner_remove_loser(&mut winners,&mut winner, num_player_2, indexplayer1 as i32, indexplayer2 as i32)
                                 }
                                 "L" => {
-
                                     equality_handling('u', &mut winners, &mut winner,  num_player_1,  num_player_2,  sign_player_1.clone(),  sign_player_2,indexplayer1 as i32, indexplayer2 as i32);
-
                                 }
                                 _ => {
                                 }

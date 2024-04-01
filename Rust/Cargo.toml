@@ -4,12 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-[lib]
-name = "codinggames"
-path = "src/codinggames/shadows_of_the_knight_1.rs"
-
 [[bin]]
 name = "interface"
 path = "src/main.rs"
 
-[dependencies]
+[lib]
+name = "solvers"
+path = "src/codinggames/lib.rs"

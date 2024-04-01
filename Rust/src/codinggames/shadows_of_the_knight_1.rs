@@ -1,5 +1,5 @@
 #![allow(warnings,unused)]
-mod shadows_of_the_night {
+pub mod solver {
     use std::collections::HashMap;
     use std::io;
     macro_rules! parse_input {

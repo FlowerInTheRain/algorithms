@@ -11,6 +11,11 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
+    <parent>
+        <groupId>al.go</groupId>
+        <artifactId>algorithms</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
     <dependencies>
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
@@ -25,14 +30,9 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <parent>
-        <groupId>al.go</groupId>
-        <artifactId>algorithms</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </parent>
     <build>
         <plugins>
-            
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
