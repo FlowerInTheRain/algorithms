@@ -9,8 +9,8 @@
     <name>Algorithmss</name>
     <description>Various algorithms from different websites</description>
     <modules>
-        <module>AlgosJava</module>
-        <module>algos</module>
+        <module>Java</module>
+        <module>Scala</module>
         <module>Rust</module>
     </modules>
 

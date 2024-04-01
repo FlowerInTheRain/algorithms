@@ -30,9 +30,16 @@ length 3. </e>
 
 > class Solution { public int solution(int N); }
 
-that, given a positive integer N, returns the length of its longest binary gap. The function should return 0 if N doesn't contain a binary gap.
+<e>that, given a positive integer N, returns the length of its longest binary gap. The function should return 0 if N 
+</e> 
 
-For example, given N = 1041 the function should return 5, because N has binary representation 10000010001 and so its longest binary gap is of length 5. Given N = 32 the function should return 0, because N has binary representation '100000' and thus no binary gaps.
+<e>doesn't contain a binary gap. </e>
+
+<e>For example, given N = 1041 the function should return 5, because N has binary representation 10000010001 and so  
+</e> 
+
+<e>its longest binary gap is of length 5. Given N = 32 the function should return 0, because N has binary 
+representation '100000' and thus no binary gaps.</e>
 
 Write an efficient algorithm for the following assumptions:
 
