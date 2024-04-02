@@ -14,7 +14,7 @@ object FrogRiverSolver {
 						occurrences += 1
 						if (j > index) index = j
 						//if (occurrences == X) return j
-						break
+						break()
 					}
 					j += 1
 				}

@@ -2,16 +2,21 @@ package al.gro
 
 object BaseConverter {
 	def convertFromAnyBaseToDecimal(num: String, base: Int): Int = {
-		if (base < 2 || base > 36) return -1
-		var `val` = 0
-		var power = 1
-		for (i <- num.length - 1 to 0 by -1) {
-			val digit = charToDecimal(num.charAt(i))
-			if (digit < 0 || digit >= base) return -1
-			`val` += digit * power
-			power *= base
+		if (base < 2 || base > 36) {
+			-1
+		} else {
+			var `val`:Int = 0
+			var power:Int = 1
+			for (i <- num.length - 1 to 0 by -1) {
+				val digit:Int = charToDecimal(num.charAt(i))
+				if (digit < 0 || digit >= base) {
+					return -1
+				}
+				`val` += digit * power
+				power *= base
+			}
+			`val`
 		}
-		`val`
 	}
 
 	private def charToDecimal(c: Char): Int = {

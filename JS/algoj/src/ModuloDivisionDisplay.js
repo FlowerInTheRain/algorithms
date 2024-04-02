@@ -1,3 +1,4 @@
+
 arrayModulo()
 
 function arrayModulo(){
@@ -35,4 +36,16 @@ function arrayModulo(){
 		line = ""
 	}
 	console.error(res)
+}
+const readline = import('readline').createInterface({
+	input: process.stdin,
+	output: process.stdout
+});
+readline.question('Enter number...', num => {
+	readline.close();
+});
+let ROW;
+for (let i = 0; i < 5; i++) {
+	ROW = readli;
+	console.log(ROW)
 }

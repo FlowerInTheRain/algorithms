@@ -34,7 +34,7 @@ class BuzzleTest extends  AnyFunSuite {
 			"40"
 		)
 		var solved = BuzzleObj.solve("10 107 114", "1", "7")
-		assert(answer1 == solved)
+		assert(answer1.toSeq == solved.toSeq)
 		solved = BuzzleObj.solve("10 26 40", "1", "7")
 		assert(answer2 == solved)
 	}
