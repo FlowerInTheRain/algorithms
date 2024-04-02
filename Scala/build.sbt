@@ -1,6 +1,6 @@
 import Dependencies._
 
-ThisBuild / scalaVersion     := "2.13.8"
+ThisBuild / scalaVersion     := "2.13.12"
 ThisBuild / version          := "0.1.0-SNAPSHOT"
 ThisBuild / organization     := "al.gro"
 ThisBuild / organizationName := "test"
@@ -9,7 +9,7 @@ ThisBuild / scalafmtOnCompile := true
 
 run / fork := true
 run / connectInput := true
-Compile / mainClass := Some("al.gro.main")
+Compile / mainClass := Some("al.gro.Main")
 
 lazy val root = (project in file("."))
   .settings(
@@ -24,6 +24,7 @@ lazy val root = (project in file("."))
     ),
     // Wartremover
     wartremoverWarnings ++= Warts.unsafe,
+    wartremoverErrors ++= Warts.unsafe
   )
   
 

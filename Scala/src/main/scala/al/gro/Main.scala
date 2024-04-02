@@ -1,6 +1,7 @@
 package al.gro
 
 object Main {
+    @SuppressWarnings(Array("org.wartremover.warts.Var"))
     def main(args: Array[String]): Unit = {
         var i: Int = 88;
         for (n <- 0 to i.toString.length) {
