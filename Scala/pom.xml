@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <java.version>19</java.version>
+        <java.version>17</java.version>
     </properties>
 
     <dependencies>
@@ -55,7 +55,7 @@
                         </goals>
                         <configuration>
                             <executable>sbt</executable>
-                            <workingDirectory>${project.basedir}</workingDirectory>
+                            <workingDirectory>./</workingDirectory>
                             <arguments>
                                 <argument>compile</argument>
                             </arguments>

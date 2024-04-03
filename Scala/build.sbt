@@ -13,7 +13,7 @@ Compile / mainClass := Some("al.gro.Main")
 
 lazy val root = (project in file("."))
   .settings(
-    name := "scalgorithms",
+    name := "algos-scala",
     scalacOptions ++= compilerOptions,
     libraryDependencies ++= Seq(
       betterFiles,

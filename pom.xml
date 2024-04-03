@@ -6,7 +6,7 @@
     <artifactId>algorithms</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>funfunfun</name>
+    <name>algo</name>
     <description>Various algorithms from different websites</description>
     <modules>
         <module>Java</module>

@@ -1,51 +1,50 @@
 package al.gro
 
+import al.gro.BaseConverter.convertFromAnyBaseToDecimal
+
 import scala.annotation.tailrec
 
-@SuppressWarnings(Array("org.wartremover.warts.Var"))
 object BuzzleObj {
-    def solve(firstLine: String, k: String, modulos: String): List[String] = {
-        println(k)
-        var answers: List[String] = List()
-        val Array(n, a, b): Array[Int] =
-            (firstLine split " ").filter(_ != "").map(_.toInt)
+    def solve(firstLine: String, modulos: String): List[String] = {
+        val Array(n, a, b): Array[Int] = (firstLine split " ").filter(_ != "").map(_.toInt)
         val inputs: Array[String] = modulos split " "
-        for (i <- a to b) {
-            val num: String = Integer.toString(i, n)
-            var isPrinted: Boolean = false
-            for (j <- inputs.indices) {
-                if (
-                  num.toInt % inputs(j).toInt == 0 || num.endsWith(inputs(j))
-                ) {
-
-                    answers :+= "Buzzle"
-                    // println("Buzzle")
-                    isPrinted = true
-                } else if (recursiveSumOfDigits(num.toInt, inputs(j).toInt)) {
-                    answers :+= "Buzzle"
-                    // println("Buzzle")
-                    isPrinted = true
-                }
-            }
-            if (!isPrinted) {
-                answers :+= num
-                // println(num)
-                isPrinted = false
+        def solveInRange(current: Int, end: Int): List[String] = {
+            if (current > end) List()
+            else {
+                val num: String = current.toString
+                val result = checkNumber(num, inputs, n)
+                result :: solveInRange(current + 1, end)
             }
         }
-        answers
+        solveInRange(a, b)
     }
     @tailrec
-    private def recursiveSumOfDigits(input: Int, validator: Int): Boolean = {
-        val res: Int = input.toString.split("").map(x => x.toInt).sum
-        if (res % validator == 0 || res.toString.endsWith(validator.toString)) {
-            true
+    private def recursiveSumOfDigits(num: Int, input: String, validator: Int, base: Int): Boolean = {
+        if (input.length <= 1) {
+            false
         } else {
-            if (res.toString.length <= 1) {
-                false;
+            val res: Int = input.split("").map(x => convertFromAnyBaseToDecimal(x, base)).sum
+            if (res % validator == 0 || convertFromAnyBaseToDecimal(Integer.toString(res, base).last.toString, base) == validator) {
+                true
             } else {
-                recursiveSumOfDigits(res, validator)
+                recursiveSumOfDigits(num, Integer.toString(res,base), validator, base)
             }
+        }
+    }
+
+    private def checkNumber(num: String, inputs: Array[String], base: Int): String = {
+        inputs.map(modulo => {
+            num.toInt % modulo.toInt == 0 ||
+                convertFromAnyBaseToDecimal(Integer.toString(num.toInt, base).last.toString, base) == modulo.toInt ||
+                recursiveSumOfDigits(num.toInt, Integer.toString(num.toInt, base), modulo.toInt, base)
+        }
+        ).find(res => res) match {
+            case Some(_) =>
+                // println("Buzzle")
+                "Buzzle"
+            case None =>
+                //println(num)
+                num
         }
     }
 }
