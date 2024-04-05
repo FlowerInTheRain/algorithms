@@ -1,4 +1,4 @@
-package al.go.codinggames;
+package al.go.codingames;
 
 public class Unary {
     public static String unaryRepresentation(String MESSAGE) {

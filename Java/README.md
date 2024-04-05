@@ -104,3 +104,9 @@ index and 6 is moved to the first place).</e>
 
 > N and K are integers within the range [0..100];
 > each element of array A is an integer within the range [−1,000..1,000].
+
+
+## Ascii Art
+
+![Puzzle](../readme-resources/img.png)
+![img_1.png](../readme-resources/img_1.png)

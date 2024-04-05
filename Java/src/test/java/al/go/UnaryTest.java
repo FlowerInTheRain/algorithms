@@ -1,6 +1,6 @@
 package al.go;
 
-import al.go.codinggames.Unary;
+import al.go.codingames.Unary;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;

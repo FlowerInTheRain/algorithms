@@ -22,4 +22,9 @@ Command embedded in Intellij Ultimate
 
 # Clashes
 
-![Clash display array of one char](./readme-resources/clash1.png)
+![Clash display array of one char](./readme-resources/clash1.png) / JS
+
+Unsolved
+
+![img.png](readme-resources/unsolved_maze_1.png)
+![img_1.png](readme-resources/unsolved_maze_2.png)
