@@ -108,5 +108,8 @@ index and 6 is moved to the first place).</e>
 
 ## Ascii Art
 
-![Puzzle](../readme-resources/img.png)
-![img_1.png](../readme-resources/img_1.png)
+![Puzzle](../readme-resources/ascii_art1.png)
+![img_1.png](../readme-resources/ascii_art2.png)
+
+## CodeWars
+![img_1.png](img_1.png)

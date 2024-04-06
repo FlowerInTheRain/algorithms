@@ -4,6 +4,7 @@ import scala.util.control.Breaks._
 @SuppressWarnings(Array("org.wartremover.warts.Var"))
 object FrogRiverSolver {
     def solve(X: Int, A: Array[Int]): Unit = {
+
         breakable {
             var occurrences = 0
             var index = 0

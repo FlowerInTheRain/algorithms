@@ -1,10 +1,13 @@
 package al.go.esgi.training;
 
+import java.util.stream.IntStream;
+
 public class StringCompressionCanalPlus {
     public static String compressOccurrence(String toCompress){
         if(toCompress == null || toCompress.isEmpty() || toCompress.contentEquals(" ")){
             throw new RuntimeException("Invalid source data");
         }
+        IntStream.range(1,9).filter(i -> i%3==0 || i%5 ==0).sum();
         toCompress = toCompress.replaceAll(" ","");
         StringBuilder compressedString = new StringBuilder();
         int occurrences = 0;

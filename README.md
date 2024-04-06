@@ -22,9 +22,11 @@ Command embedded in Intellij Ultimate
 
 # Clashes
 
-![Clash display array of one char](./readme-resources/clash1.png) / JS
+![Clash display array of one char](./readme-resources/clash1.png) 
+
+Done in JS as moduloDivisionDisplay
 
 Unsolved
 
 ![img.png](readme-resources/unsolved_maze_1.png)
-![img_1.png](readme-resources/unsolved_maze_2.png)
+![img_1.png](readme-resources/so_math_log_huh.png)
