@@ -1,5 +1,6 @@
 package al.gro
 
+import al.gro.codingame.{BuzzleObj, LightBulbs}
 import org.scalatest.funsuite.AnyFunSuite
 
 class LightBulbTest extends AnyFunSuite {

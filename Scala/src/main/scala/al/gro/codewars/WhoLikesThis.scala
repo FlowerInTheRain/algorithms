@@ -1,4 +1,4 @@
-package al.gro
+package al.gro.codewars
 
 object WhoLikesThis {
 	@SuppressWarnings(Array("org.wartremover.warts.StringPlusAny"))

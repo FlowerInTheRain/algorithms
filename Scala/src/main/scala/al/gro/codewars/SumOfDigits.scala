@@ -1,4 +1,4 @@
-package al.gro
+package al.gro.codewars
 
 import scala.annotation.tailrec
 

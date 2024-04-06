@@ -1,5 +1,6 @@
 package al.gro
 
+import al.gro.codewars.SumOfDigits
 import org.scalatest.funsuite.AnyFunSuite
 
 class SumOfDigitsTest extends AnyFunSuite {

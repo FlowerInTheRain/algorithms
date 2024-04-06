@@ -1,12 +1,12 @@
-package al.gro
+package al.gro.codingame
 
-import al.gro.BaseConverter.convertFromAnyBaseToDecimal
+import al.gro.codingame.BaseConverter.convertFromAnyBaseToDecimal
 
 import scala.annotation.tailrec
 
 object BuzzleObj {
     def solve(firstLine: String, modulos: String): List[String] = {
-        
+
         val Array(n, a, b): Array[Int] =
             (firstLine split " ").filter(_ != "").map(_.toInt)
         val inputs: Array[String] = modulos split " "

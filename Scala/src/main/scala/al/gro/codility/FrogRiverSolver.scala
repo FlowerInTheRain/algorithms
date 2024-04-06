@@ -1,4 +1,5 @@
-package al.gro
+package al.gro.codility
+
 import scala.util.control.Breaks._
 
 @SuppressWarnings(Array("org.wartremover.warts.Var"))

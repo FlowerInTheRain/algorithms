@@ -1,4 +1,4 @@
-package al.gro
+package al.gro.codingame
 
 @SuppressWarnings(
   Array("org.wartremover.warts.Var", "org.wartremover.warts.Return")

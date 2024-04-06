@@ -1,5 +1,6 @@
 package al.gro
 
+import al.gro.codewars.WhoLikesThis
 import org.scalatest.funsuite.AnyFunSuite
 
 class WhoLikesThisTest extends AnyFunSuite{

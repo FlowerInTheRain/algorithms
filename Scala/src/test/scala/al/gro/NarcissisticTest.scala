@@ -1,5 +1,6 @@
 package al.gro
 
+import al.gro.codewars.Narcissistic
 import org.scalatest.funsuite.AnyFunSuite
 
 class NarcissisticTest extends AnyFunSuite{
