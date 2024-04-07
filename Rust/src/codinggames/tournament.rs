@@ -14,8 +14,6 @@ pub mod solver {
     }
 
     pub fn solve(participants: Vec<&str>) -> HashMap<i32,String> {
-        //let mut input_line = String::new();
-        //io::stdin().read_line(&mut input_line).unwrap();
         let mut winners : Vec<Player> = Vec::new();
         let mut winner  = 0;
         let mut num_player_1:i32 = 0;
@@ -23,14 +21,10 @@ pub mod solver {
         let mut sign_player_1: String = "L".to_string();
         let mut sign_player_2;
         let n = participants.len() as i32;
-        //let n = parse_input!(input_line, i32);
         let round_amount = n / 2;
         for j in 0..round_amount {
             if j == 0 {
                 for i in 0..n {
-                    //let mut input_line = String::new();dd
-                    //io::stdin().read_line(&mut input_line).unwrap();
-                    //let inputs = input_line.split(" ").collect::<Vec<_>>();
                     let inputs = participants[i as usize].split(" ").collect::<Vec<_>>();
                     if i % 2 == 1 {
                         num_player_2 = parse_input!(inputs[0], i32);
@@ -47,6 +41,7 @@ pub mod solver {
                                     equality_handling('c',&mut winners,  &mut winner,  num_player_1,  num_player_2, sign_player_1.clone(), sign_player_2, i - 1, i)
                                 }
                                 _ => {
+                                    continue
                                 }
                             }
                         } else if sign_player_2 == "C" {
@@ -61,6 +56,7 @@ pub mod solver {
                                     equality_handling('c',&mut winners,  &mut winner,  num_player_1,  num_player_2,  sign_player_1.clone(),  sign_player_2, i - 1, i)
                                 }
                                 _ => {
+                                    continue
                                 }
                             }
                         } else if sign_player_2 == "L" {
@@ -75,6 +71,7 @@ pub mod solver {
                                     equality_handling('c', &mut winners, &mut winner,  num_player_1,  num_player_2,  sign_player_1.clone(),  sign_player_2,  i- 1, i)
                                 }
                                 _ => {
+                                    continue
                                 }
                             }
                         } else if sign_player_2 == "P" {
@@ -89,6 +86,7 @@ pub mod solver {
                                     equality_handling('c', &mut winners,  &mut winner,  num_player_1,  num_player_2,  sign_player_1.clone(),  sign_player_2, i - 1 , i)
                                 }
                                 _ => {
+                                    continue
                                 }
                             }
                         } else {
@@ -103,22 +101,20 @@ pub mod solver {
                                     equality_handling('c', &mut winners,  &mut winner, num_player_1, num_player_2, sign_player_1.clone(), sign_player_2, i - 1 , i)
                                 }
                                 _ => {
+                                    continue
                                 }
                             }
                         }
                     } else {
                         num_player_1 = parse_input!(inputs[0], i32);
                         sign_player_1 = inputs[1].trim().to_string();
-
                     }
                 }
             } else {
-
                 for i in 0..winners.len() {
                     if i % 2 == 1 {
                         let player2 : Player;
                         let player1: Player;
-
                         let mut index= 0;
                         if  i < 2{
                             index = i;
@@ -146,8 +142,8 @@ pub mod solver {
                                     equality_handling('u', &mut winners,  &mut winner,  num_player_1,  num_player_2,  sign_player_1.clone(),  sign_player_2,indexplayer1 as i32, indexplayer2 as i32);
                                 }
                                 _ => {
+                                    continue
                                 }
-
                             }
                         } else if sign_player_2 == "C" {
                             match sign_player_1.as_str() {
@@ -161,6 +157,7 @@ pub mod solver {
                                     equality_handling('u', &mut winners,  &mut winner,  num_player_1,  num_player_2,  sign_player_1.clone(),  sign_player_2,indexplayer1 as i32, indexplayer2 as i32);
                                 }
                                 _ => {
+                                    continue
                                 }
                             }
                         } else if sign_player_2 == "L" {
@@ -175,6 +172,7 @@ pub mod solver {
                                     equality_handling('u', &mut winners, &mut winner,  num_player_1,  num_player_2,  sign_player_1.clone(),  sign_player_2,indexplayer1 as i32, indexplayer2 as i32);
                                 }
                                 _ => {
+                                    continue
                                 }
                             }
                         } else if sign_player_2 == "P" {
@@ -190,6 +188,7 @@ pub mod solver {
                                     equality_handling('u', &mut winners,&mut winner,  num_player_1,  num_player_2,  sign_player_1.clone(),  sign_player_2,indexplayer1 as i32, indexplayer2 as i32);
                                 },
                                 _ => {
+                                    continue
                                 }
                             }
                         } else {
@@ -204,37 +203,37 @@ pub mod solver {
                                     equality_handling('u', &mut winners, &mut winner,  num_player_1,  num_player_2,  sign_player_1.clone(),  sign_player_2,indexplayer1 as i32, indexplayer2 as i32);
                                 },
                                 _ => {
+                                    continue
                                 }
                             }
                         }
                     }
-
                 }
             }
         }
         let mut book_reviews = HashMap::new();
-
         book_reviews.insert(
             winner,
             winners.get(0).unwrap().defeated.to_string()
         );
-        println!("{:?}", book_reviews);
         book_reviews
     }
 
     fn equality_handling(c_or_u: char, mut winners: &mut Vec<Player>,  winner:&mut i32,  num_player_1: i32, num_player_2:  i32,  sign_player_1:  String,  sign_player_2:String, index_player_1:i32, index_player_2:i32) {
-        if c_or_u == 'c' {
-            if num_player_2 < num_player_1 {
-                create_and_add_non_existing_player(&mut winners,  winner,  num_player_1, num_player_2, sign_player_2.clone());
-            } else {
-                create_and_add_non_existing_player(&mut winners,  winner,  num_player_2, num_player_1, sign_player_1.clone());
+        match c_or_u {
+            'c'  =>{
+                if num_player_2 < num_player_1 {
+                    create_and_add_non_existing_player(&mut winners,  winner,  num_player_1, num_player_2, sign_player_2.clone());
+                } else {
+                    create_and_add_non_existing_player(&mut winners,  winner,  num_player_2, num_player_1, sign_player_1.clone());
+                }
             }
-
-        } else {
-            if num_player_2 < num_player_1 {
-                set_winner_remove_loser(&mut winners, winner, num_player_1, index_player_2, index_player_1)
-            } else {
-                set_winner_remove_loser(&mut winners,  winner, num_player_2, index_player_1, index_player_2)
+            _ => {
+                if num_player_2 < num_player_1 {
+                    set_winner_remove_loser(&mut winners, winner, num_player_1, index_player_2, index_player_1)
+                } else {
+                    set_winner_remove_loser(&mut winners,  winner, num_player_2, index_player_1, index_player_2)
+                }
             }
         }
     }
@@ -247,7 +246,6 @@ pub mod solver {
         };
         *winner =  num_winner.clone();
         winners.push(round_winner);
-
     }
 
     fn set_winner_remove_loser( winners: &mut Vec<Player>, winner:  &mut i32, round_loser: i32, index_player: i32, index_to_remove: i32) {
@@ -274,7 +272,6 @@ pub mod solver {
 mod tests {
     use std::collections::HashMap;
     use crate::tournament;
-
     #[test]
     fn exploration() {
         let participants = vec!["28 R",
@@ -312,8 +309,6 @@ mod tests {
         let mut answer:HashMap<i32,String> = HashMap::new();
         answer.insert(10,"30 31 20 11 15".to_string());
         assert_eq!(answer, tournament::solver::solve(participants));
-        assert_eq!(2+2, 4);
-
     }
     #[test]
     fn exploration2() {
@@ -329,7 +324,5 @@ mod tests {
         let mut answer:HashMap<i32,String> = HashMap::new();
         answer.insert(2,"6 5 1".to_string());
         assert_eq!(answer, tournament::solver::solve(participants));
-        assert_eq!(2+2, 4);
-
     }
 }

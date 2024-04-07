@@ -11,21 +11,21 @@ object Enigma {
 			case _ => encode(firstShift, alphabet, rotors, msg)
 		}
 		res match {
-			case Right(_) => "Unablle to do shit"
+			case Right(_) => "Invalid input"
 			case Left(str)=> str
 		}
 	}
 	@tailrec
-	def encode(firstShift:Int, alphabet:List[Char], rotors: List[String], msg:String) : Either[String, Int] = {
+	private def encode(firstShift:Int, alphabet:List[Char], rotors: List[String], msg:String) : Either[String, Int] = {
 		if(rotors.isEmpty){
 			Left(msg)
 		} else {
 			if(firstShift > -1){
-				val msgAfterShift = msg.toList.zipWithIndex.map( (charWithIndex) => alphabet(alphabet.indexOf
-				(charWithIndex._1) +	4  + charWithIndex._2 %
-						alphabet.length))
+				val msgAfterShift = msg.toList.zipWithIndex.map( (charWithIndex) => {
+						alphabet((alphabet.indexOf
+						(charWithIndex._1) +	firstShift  + charWithIndex._2 )% alphabet.length)
+					})
 					.mkString("")
-				println(msgAfterShift)
 				encode(-1, alphabet, rotors, msgAfterShift)
 			} else {
 				rotors.headOption match {
@@ -33,7 +33,6 @@ object Enigma {
 					case Some(str) =>
 						val rotorToCharArray =  str.toList
 						val msgAfterRotor = msg.toList.map(char => {
-							println(rotorToCharArray(char.toInt - 65))
 							rotorToCharArray(char.toInt - 65)
 						}).mkString("")
 						encode(firstShift, alphabet, rotors.drop(1), msgAfterRotor)
