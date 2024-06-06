@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class LikesTest {
+class LikesTest {
 	private final String[] names = new String[4];
 	@Test
-	public void shouldTestSomething(){
+	void shouldTestSomething(){
 		names[0] = "Sid";
 		names[1] = "Nono";
 		names[2] = "Armand";

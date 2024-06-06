@@ -5,7 +5,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-public class UnaryTest {
+import java.io.IOException;
+
+class UnaryTest {
     @ParameterizedTest
     @CsvSource(
             {
@@ -14,7 +16,7 @@ public class UnaryTest {
                     "%,00 0 0 0 00 00 0 0 00 0 0 0"
             }
     )
-    public void shouldGiveCorrectUnaryRepresentation(String input, String expectedOutput){
+    void shouldGiveCorrectUnaryRepresentation(String input, String expectedOutput) throws IOException {
         Assertions.assertEquals(expectedOutput, Unary.unaryRepresentation(input));
     }
 }

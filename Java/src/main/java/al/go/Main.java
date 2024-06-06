@@ -2,6 +2,7 @@ package al.go;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Main {
 	public static void main(String[] args) {
@@ -17,5 +18,6 @@ public class Main {
 			for (int i = 0; i < n; ++i)
 				sub[i] = "" + s.charAt(i * 2) + s.charAt(1 + i * 2);
 		}
+		System.out.println(IntStream.range(2,3).filter(n -> 3%n == 0).count());
 	}
 }

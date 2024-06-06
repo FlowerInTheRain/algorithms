@@ -4,10 +4,12 @@ import java.util.List;
 
 public class Property {
 	private final String name;
+	public String value;
 	private List<Property> children;
 	
-	public Property(String name, List<Property> children) {
+	public Property(String name, String value, List<Property> children) {
 		this.name = name;
+		this.value = value;
 		this.children = children;
 	}
 	
@@ -27,12 +29,24 @@ public class Property {
 		this.children = children;
 	}
 	
+	public String getValue() {
+		return value;
+	}
+	
+	public void setValue(String value) {
+		this.value = value;
+	}
+	
+	public static void lol(){
+	
+	}
 	
 	@Override
 	public String toString() {
-		return "{" +
-					   "name:'" + name + '\'' +
-					   ", children=" + children +
-					   '}';
+		return "\n{" +
+					   "\n\tname='" + name + '\'' +
+					   ", \n\tvalue='" + value + '\'' +
+					   ", \n\tchildren=" + children +
+					   "\n}";
 	}
 }
