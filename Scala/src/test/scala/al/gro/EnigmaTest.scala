@@ -24,6 +24,7 @@ class EnigmaTest extends AnyFunSuite {
         )
     }
 
+<<<<<<< Updated upstream
     /**
     test("should decode complex message") {
         assert(
@@ -36,6 +37,16 @@ class EnigmaTest extends AnyFunSuite {
         )
     }
 	*/
+=======
+    test("should decode complex message") {
+
+        /**
+         * assert( "EVERYONEISWELCOMEHERE" == Enigma.solve( "DECODE", 9, rotors,
+         * "PQSACVVTOISXFXCIAMQEM" ) )
+         */
+    }
+
+>>>>>>> Stashed changes
     test("should decode simple message") {
         assert("AAA" == Enigma.solve("DECODE", 4, rotors, "KQF"))
     }
